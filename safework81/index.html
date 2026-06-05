@@ -544,6 +544,19 @@ tr.rw{cursor:pointer}tr.rw:hover td{background:var(--bg3)}
 @media (max-width: 480px) {
   .g4,.g5,.g6 { grid-template-columns: 1fr !important; }
 }
+/* -- BOTTONI AUDIT COLORATI -- */
+.eb { background: transparent; border: 1px solid var(--bd2); color: var(--tx3); }
+.eb:hover { border-color: var(--tx2); color: var(--tx2); }
+.eb.ok { background: rgba(58,170,111,.25) !important; border-color: var(--gn) !important; color: var(--gn) !important; font-weight: 600 !important; }
+.eb.nc { background: rgba(217,79,79,.25) !important; border-color: var(--rd) !important; color: var(--rd) !important; font-weight: 600 !important; }
+.eb.na { background: rgba(74,143,212,.2) !important; border-color: var(--bl) !important; color: var(--bl) !important; font-weight: 600 !important; }
+
+/* Placeholder data bianco e grande */
+#nc-scad-ph-1_1, [id^="nc-scad-ph-"] {
+  font-size: 15px !important;
+  color: #f0ece4 !important;
+  font-weight: 500 !important;
+}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
 </style>
 </head>
@@ -1591,7 +1604,7 @@ function renderChecklist(){
 }
 function renderVoce(v){
   const k=v.n.replace('.','_');
-  return '<div class="ci"><div class="ci-row"><span class="ci-n">'+v.n+'</span><div class="ci-tx"><div class="ci-lb">'+v.lb+'</div><div class="ci-rf">'+v.ref+'</div></div><div class="ci-ac"><input class="sc-i" id="sc-'+k+'" placeholder="0-5" type="number" min="0" max="5" oninput="aggiornaScore()"><button class="eb" id="eb-ok-'+k+'" onclick="setEsito(\''+v.n+'\',\'ok\')">OK</button><button class="eb" id="eb-nc-'+k+'" onclick="setEsito(\''+v.n+'\',\'nc\')">NC</button><button class="eb" id="eb-na-'+k+'" onclick="setEsito(\''+v.n+'\',\'na\')">NA</button></div></div></div>';
+  return '<div class="ci"><div class="ci-row"><span class="ci-n">'+v.n+'</span><div class="ci-tx"><div class="ci-lb">'+v.lb+'</div><div class="ci-rf">'+v.ref+'</div></div><div class="ci-ac"><button class="eb" id="eb-ok-'+k+'" onclick="setEsito(\''+v.n+'\',\'ok\')">OK</button><button class="eb" id="eb-nc-'+k+'" onclick="setEsito(\''+v.n+'\',\'nc\')">NC</button><button class="eb" id="eb-na-'+k+'" onclick="setEsito(\''+v.n+'\',\'na\')">NA</button></div></div></div>';
 }
 function addNcBoxes(){
   document.querySelectorAll('.ci').forEach(ci=>{
@@ -1715,6 +1728,8 @@ document.getElementById('login-pw')?.addEventListener('keydown', e => { if(e.key
 </script>
 </body>
 </html>
+
+
 
 
 
