@@ -563,6 +563,58 @@ tr.rw{cursor:pointer}tr.rw:hover td{background:var(--bg3)}
   color: #8a8680 !important;
   font-weight: 400 !important;
 }
+/* -- FIX NC BOX FINALE -- */
+@media (max-width: 768px) {
+  /* Campo data più corto */
+  input[type="date"].nc-i { 
+    width: 100% !important; 
+    max-width: 220px !important; 
+    color-scheme: dark !important;
+  }
+  
+  /* Label NC più visibili */
+  .nc-lb { 
+    font-size: 14px !important; 
+    color: #e2ddd6 !important; 
+    font-weight: 600 !important; 
+    margin-bottom: 6px !important;
+    display: block !important;
+    letter-spacing: 0.3px !important;
+  }
+  
+  /* Bottoni OK/NC/NA più grandi */
+  .ci-ac { 
+    gap: 10px !important; 
+    margin-top: 12px !important;
+  }
+  .eb { 
+    min-height: 48px !important; 
+    padding: 10px 24px !important; 
+    font-size: 15px !important; 
+    font-weight: 600 !important;
+    flex: 1 !important;
+    border-radius: 8px !important;
+    letter-spacing: 0.5px !important;
+  }
+  .eb.ok { 
+    background: rgba(58,170,111,.3) !important; 
+    border-color: #3aaa6f !important; 
+    color: #3aaa6f !important;
+    border-width: 2px !important;
+  }
+  .eb.nc { 
+    background: rgba(217,79,79,.3) !important; 
+    border-color: #d94f4f !important; 
+    color: #d94f4f !important;
+    border-width: 2px !important;
+  }
+  .eb.na { 
+    background: rgba(74,143,212,.3) !important; 
+    border-color: #4a8fd4 !important; 
+    color: #4a8fd4 !important;
+    border-width: 2px !important;
+  }
+}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
 </style>
 </head>
@@ -1620,7 +1672,7 @@ function addNcBoxes(){
     if(ci.querySelector('#nc-bx-'+k))return;
     const bx=document.createElement('div');
     bx.className='nc-bx';bx.id='nc-bx-'+k;
-    bx.innerHTML='<div class="nc-t">Non conformita rilevata</div><div class="nc-lb">Descrizione</div><textarea class="nc-i" id="nc-desc-'+k+'" rows="2" placeholder="Descrivi la NC..."></textarea><div class="nc-r2"><div><div class="nc-lb">Gravita</div><select class="nc-s" id="nc-grav-'+k+'"><option value="bassa">Bassa</option><option value="media">Media</option><option value="alta" selected>Alta</option><option value="critica">Critica</option></select></div><div><div class="nc-lb">Responsabile</div><input class="nc-i" id="nc-resp-'+k+'" placeholder="Nome responsabile"></div></div><div class="nc-lb">Scadenza risoluzione</div><div style="position:relative"><input class="nc-i" type="date" id="nc-scad-'+k+'" style="width:100%"><div style="position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;display:flex;align-items:center;padding:10px;color:var(--tx3);font-size:13px" id="nc-scad-ph-'+k+'">Seleziona data scadenza</div></div>';
+    bx.innerHTML='<div class="nc-t">Non conformita rilevata</div><div class="nc-lb">Descrizione</div><textarea class="nc-i" id="nc-desc-'+k+'" rows="2" placeholder="Descrivi la NC..."></textarea><div class="nc-r2"><div><div class="nc-lb">Gravita</div><select class="nc-s" id="nc-grav-'+k+'"><option value="bassa">Bassa</option><option value="media">Media</option><option value="alta" selected>Alta</option><option value="critica">Critica</option></select></div><div><div class="nc-lb">Responsabile</div><input class="nc-i" id="nc-resp-'+k+'" placeholder="Nome responsabile"></div></div><div class="nc-lb">Scadenza risoluzione</div><input class="nc-i" type="date" id="nc-scad-'+k+'" style="width:100%;color-scheme:dark">';
     ci.appendChild(bx);
   });
 }
@@ -1734,6 +1786,8 @@ document.getElementById('login-pw')?.addEventListener('keydown', e => { if(e.key
 </script>
 </body>
 </html>
+
+
 
 
 
