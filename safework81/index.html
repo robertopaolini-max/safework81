@@ -420,6 +420,130 @@ tr.rw{cursor:pointer}tr.rw:hover td{background:var(--bg3)}
   #nc-scad { position: relative !important; }
 }
 .nc-lb { font-size: 11px; color: var(--tx3); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; display: block; }
+/* -- RESTYLING MOBILE DEFINITIVO -- */
+@media (max-width: 768px) {
+  /* FONT BASE */
+  body { font-size: 15px !important; }
+  
+  /* LAYOUT COMPLETO */
+  html, body { overflow: auto !important; height: auto !important; }
+  #app { flex-direction: column !important; height: auto !important; min-height: 100vh !important; overflow: auto !important; }
+  #main { width: 100% !important; height: auto !important; overflow: auto !important; }
+  #pages { position: relative !important; overflow: visible !important; flex: none !important; }
+  .pg { position: relative !important; inset: auto !important; overflow: visible !important; padding: 12px !important; display: none !important; }
+  .pg.on { display: block !important; }
+
+  /* GRIGLIA */
+  .g4,.g5,.g6 { grid-template-columns: 1fr 1fr !important; gap: 8px !important; margin-bottom: 10px !important; }
+  .fr2,.fr3 { grid-template-columns: 1fr !important; gap: 8px !important; }
+
+  /* KPI */
+  .kpi { padding: 12px !important; }
+  .kpi-l { font-size: 11px !important; color: #a8a49c !important; }
+  .kpi-v { font-size: 26px !important; }
+  .kpi-s { font-size: 11px !important; }
+
+  /* TABELLE */
+  .tw { overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; }
+  table { min-width: 480px !important; }
+  th { font-size: 10px !important; padding: 7px 8px !important; }
+  td { font-size: 13px !important; padding: 8px !important; }
+
+  /* BOTTONI */
+  .btn { min-height: 42px !important; font-size: 14px !important; padding: 8px 16px !important; }
+  .b-s { min-height: 36px !important; font-size: 13px !important; }
+
+  /* INPUT */
+  input, select, textarea { font-size: 15px !important; min-height: 42px !important; padding: 10px !important; color: #f0ece4 !important; background: #1d1d1d !important; border: 1px solid #343434 !important; border-radius: 7px !important; width: 100% !important; }
+  input[type="date"] { color: #f0ece4 !important; background: #1d1d1d !important; font-size: 15px !important; min-height: 44px !important; }
+  input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1) !important; opacity: 0.8 !important; width: 22px !important; height: 22px !important; }
+  input[type="number"] { min-width: 55px !important; width: 55px !important; }
+  label { font-size: 12px !important; color: #a8a49c !important; margin-bottom: 4px !important; display: block !important; }
+  .fld { margin-bottom: 12px !important; }
+
+  /* MODALI */
+  .mo { max-width: calc(100vw - 12px) !important; margin: 6px !important; max-height: 92vh !important; }
+  .mh h2 { font-size: 16px !important; }
+  .mb { padding: 12px !important; }
+  .mf { padding: 10px 12px !important; flex-wrap: wrap !important; gap: 8px !important; }
+  .mf .btn { flex: 1 !important; justify-content: center !important; }
+
+  /* CHECKLIST AUDIT */
+  .ar-h { padding: 12px 14px !important; min-height: 50px !important; }
+  .ar-t { font-size: 14px !important; color: #f0ece4 !important; }
+  .ci { padding: 12px 14px !important; }
+  .ci-row { flex-wrap: wrap !important; gap: 8px !important; }
+  .ci-n { font-size: 13px !important; color: #a8a49c !important; min-width: 32px !important; }
+  .ci-lb { font-size: 14px !important; color: #f0ece4 !important; line-height: 1.5 !important; }
+  .ci-rf { font-size: 11px !important; color: #a8a49c !important; margin-top: 3px !important; }
+  .ci-ac { width: 100% !important; margin-top: 10px !important; gap: 8px !important; flex-wrap: wrap !important; }
+  .eb { min-height: 42px !important; padding: 8px 20px !important; font-size: 14px !important; flex: 1 !important; justify-content: center !important; text-align: center !important; }
+  .sc-i { width: 60px !important; min-height: 42px !important; font-size: 16px !important; text-align: center !important; flex-shrink: 0 !important; }
+
+  /* NC BOX */
+  .nc-bx { padding: 14px !important; margin-top: 10px !important; border-radius: 8px !important; }
+  .nc-t { font-size: 13px !important; color: #d94f4f !important; margin-bottom: 10px !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; }
+  .nc-lb { font-size: 13px !important; color: #a8a49c !important; margin-bottom: 6px !important; display: block !important; font-weight: 500 !important; }
+  .nc-i { font-size: 15px !important; min-height: 44px !important; color: #f0ece4 !important; background: #161616 !important; padding: 10px !important; }
+  textarea.nc-i { min-height: 80px !important; }
+  .nc-s { font-size: 15px !important; min-height: 44px !important; color: #f0ece4 !important; background: #161616 !important; -webkit-appearance: none !important; }
+  .nc-r2 { grid-template-columns: 1fr !important; gap: 10px !important; margin: 10px 0 !important; }
+
+  /* FOOTER AUDIT FISSO */
+  #audit-form > div > div:last-child {
+    position: fixed !important;
+    bottom: 0 !important; left: 0 !important; right: 0 !important;
+    background: #161616 !important;
+    border-top: 2px solid #2a2a2a !important;
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    z-index: 50 !important;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.5) !important;
+  }
+  #audit-form > div > div:last-child .btn { flex: 1 !important; justify-content: center !important; min-height: 46px !important; font-size: 14px !important; }
+  #audit-form > div { padding-bottom: 90px !important; }
+  #af-score { font-size: 20px !important; }
+  #af-nc-count { font-size: 13px !important; }
+
+  /* CARDS */
+  .card { padding: 12px !important; }
+  .ct { font-size: 11px !important; }
+  .ab { padding: 10px 12px !important; }
+  .ab-t { font-size: 13px !important; color: #f0ece4 !important; }
+  .ab-s { font-size: 12px !important; color: #a8a49c !important; }
+
+  /* PILLS */
+  .pl { font-size: 11px !important; padding: 3px 8px !important; }
+
+  /* SIDEBAR */
+  .sb-a { font-size: 15px !important; padding: 13px 16px !important; }
+  .sb-sec { font-size: 10px !important; }
+  .sb-logo { font-size: 16px !important; }
+
+  /* TOPBAR */
+  #topbar h1 { font-size: 17px !important; }
+  #mob-menu { font-size: 22px !important; padding: 8px !important; }
+
+  /* TBAR */
+  .tbar { flex-wrap: wrap !important; gap: 8px !important; }
+  .tbar .inp { width: 100% !important; font-size: 15px !important; }
+  .tbar .btn { font-size: 13px !important; }
+
+  /* BADGE */
+  .tess { font-size: 13px !important; }
+  .t-nm { font-size: 15px !important; }
+  .t-rl { font-size: 12px !important; }
+
+  /* DETTAGLIO */
+  #det-imp-piva, #det-imp-tipo, #det-imp-comune, #det-imp-email,
+  #det-cant-comune, #det-cant-impresa, #det-cant-badge, #det-cant-comm,
+  #det-lav-cf, #det-lav-mans, #det-lav-imp, #det-lav-contr { font-size: 14px !important; color: #f0ece4 !important; }
+}
+@media (max-width: 480px) {
+  .g4,.g5,.g6 { grid-template-columns: 1fr !important; }
+}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:2px}
 </style>
 </head>
@@ -1591,6 +1715,7 @@ document.getElementById('login-pw')?.addEventListener('keydown', e => { if(e.key
 </script>
 </body>
 </html>
+
 
 
 
